@@ -28,10 +28,6 @@ requirements:
     - matplotlib >=2.2.3
     - numba >=0.38.1
     - joblib >=0.14.1
-    - pytest >=4.0.2
-    - pytest-pylint >=0.13.0
-    - nbconvert >=5.3.1
-    - jupyter_client >=5.2.3
 
 test:
   imports:
