@@ -1,5 +1,5 @@
 {% set name = "PhiK" %}
-{% set version = "0.9.12" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/KaveIO/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 878fd6b0a3b62222fd700ba7ce3a5d77407b830ea7c5d564764f8b5a35e46263
+  sha256: ee5094587fddcf1c83384814be90dbd859c2f3586f95f9801426a6600c3ffed2
 
 build:
   number: 0
@@ -18,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - pip
   run:
-    - python >=3.5
+    - python
     - numpy >=1.15.4
     - scipy >=1.1.0
     - pandas >=0.23.4
@@ -39,8 +39,6 @@ about:
   license_family: Apache
   license_file: LICENSE
   summary: Phi_K correlation analyzer library
-
-  # The remaining entries in this section are optional, but recommended.
   description: |
     Phi_K is a new and practical correlation coefficient based on several
     refinements to Pearson's hypothesis test of independence of two variables.
