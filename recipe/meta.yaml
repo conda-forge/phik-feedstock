@@ -1,5 +1,5 @@
 {% set name = "PhiK" %}
-{% set version = "0.11.2" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/KaveIO/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: e98e6078b8c81165c6ad565b933883bda8370a375936c478f2d733bcd67863a8
+  sha256: 58b5ba2dab0ce30ff171551141b06dd1724611ccdd4654c285d1bece76e6ad6a
 
 build:
   number: 0
