@@ -11,15 +11,19 @@ source:
 
 build:
   number: 0
-  noarch: python
   entry_points:
     - phik_trial = phik.entry_points:phik_trial  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - {{ compiler('cxx') }}
   host:
     - python >=3.6
     - pip
+    - pybind11
+    - pybind11-abi
+    - pybind11-stubgen
   run:
     - python >=3.6
     - numpy >=1.18.0
@@ -27,9 +31,7 @@ requirements:
     - pandas >=0.25.1
     - matplotlib-base >=2.2.3
     - joblib >=0.14.1
-    - pybind11
-    - pybind11-abi
-    - pybind11-stubgen
+
 
 test:
   imports:
