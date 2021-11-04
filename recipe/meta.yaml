@@ -19,13 +19,13 @@ requirements:
   build:
     - {{ compiler('cxx') }}
   host:
-    - python >=3.6
+    - python
     - pip
     - pybind11
     - pybind11-abi
     - pybind11-stubgen
   run:
-    - python >=3.6
+    - python
     - numpy >=1.18.0
     - scipy >=1.5.2
     - pandas >=0.25.1
