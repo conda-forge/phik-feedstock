@@ -27,6 +27,9 @@ requirements:
     - pandas >=0.25.1
     - matplotlib-base >=2.2.3
     - joblib >=0.14.1
+    - pybind11
+    - pybind11-abi
+    - pybind11-stubgen
 
 test:
   imports:
