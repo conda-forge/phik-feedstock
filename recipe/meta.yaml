@@ -10,7 +10,7 @@ source:
   sha256: 58b5ba2dab0ce30ff171551141b06dd1724611ccdd4654c285d1bece76e6ad6a
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - phik_trial = phik.entry_points:phik_trial  # [win]
   script: {{ PYTHON }} -m pip install . -vv
