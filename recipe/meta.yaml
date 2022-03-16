@@ -20,6 +20,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake >=3.16
     - ninja  # [not win]
+    - make  # [linux]
   host:
     - python
     - pip
