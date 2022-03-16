@@ -18,13 +18,15 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}
-    - cmake >=3.14
+    - cmake >=3.16
   host:
     - python
     - pip
-    - pybind11
+    - setuptools >=42
+    - pybind11 >=2.8.1
     - pybind11-abi
     - pybind11-stubgen
+    - scikit-build >=0.13.1
   run:
     - python
     - numpy >=1.18.0
