@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/KaveIO/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 05d2dd9ad13c77732046946c5fbd3cc6e9146324816a3cfabecdd08732ced2c8
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/phik-{{ version }}.tar.gz
+  sha256: d4d53274685e56fb08088505b4eec70be07f2f8044e7961ca02b399e42c37025
 
 build:
   number: 0
@@ -23,15 +23,12 @@ requirements:
     - ninja  # [not win]
     - make  # [linux]
   host:
-    - python
+    - python >=3.8
+    - scikit-build-core >=0.3.3
+    - pybind11
     - pip
-    - setuptools >=42
-    - pybind11 >=2.8.1
-    - pybind11-abi
-    - pybind11-stubgen
-    - scikit-build >=0.13.1
   run:
-    - python
+    - python >=3.8
     - numpy >=1.18.0
     - scipy >=1.5.2
     - pandas >=0.25.1
