@@ -1,16 +1,16 @@
 {% set name = "PhiK" %}
-{% set version = "0.12.3" %}
+{% set version = "0.12.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/KaveIO/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 35c529482c37165e5b5bb60167499dfcba892486cbe7be97eaed5123c59060e7
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/phik-{{ version }}.tar.gz
+  sha256: d4d53274685e56fb08088505b4eec70be07f2f8044e7961ca02b399e42c37025
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - phik_trial = phik.entry_points:phik_trial  # [win]
   script: {{ PYTHON }} -m pip install . -vv
@@ -24,12 +24,9 @@ requirements:
     - make  # [linux]
   host:
     - python
+    - scikit-build-core >=0.3.3
+    - pybind11
     - pip
-    - setuptools >=42
-    - pybind11 >=2.8.1
-    - pybind11-abi
-    - pybind11-stubgen
-    - scikit-build >=0.13.1
   run:
     - python
     - numpy >=1.18.0
