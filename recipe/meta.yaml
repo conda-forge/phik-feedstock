@@ -23,12 +23,12 @@ requirements:
     - ninja  # [not win]
     - make  # [linux]
   host:
-    - python >=3.8
+    - python
     - scikit-build-core >=0.3.3
     - pybind11
     - pip
   run:
-    - python >=3.8
+    - python
     - numpy >=1.18.0
     - scipy >=1.5.2
     - pandas >=0.25.1
