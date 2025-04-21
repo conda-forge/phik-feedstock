@@ -1,5 +1,5 @@
 {% set name = "PhiK" %}
-{% set version = "0.12.3" %}
+{% set version = "0.12.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/KaveIO/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 35c529482c37165e5b5bb60167499dfcba892486cbe7be97eaed5123c59060e7
+  sha256: 05d2dd9ad13c77732046946c5fbd3cc6e9146324816a3cfabecdd08732ced2c8
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - phik_trial = phik.entry_points:phik_trial  # [win]
   script: {{ PYTHON }} -m pip install . -vv
