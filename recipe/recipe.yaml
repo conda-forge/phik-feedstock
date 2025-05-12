@@ -1,9 +1,10 @@
-{% set name = "PhiK" %}
-{% set version = "0.12.4" %}
+context:
+  name: "PhiK"
+  version: "0.12.4"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/phik-{{ version }}.tar.gz
@@ -11,17 +12,19 @@ source:
 
 build:
   number: 0
-  entry_points:
-    - phik_trial = phik.entry_points:phik_trial  # [win]
-  script: {{ PYTHON }} -m pip install . -vv
+  # entry_points:
+  # - phik_trial = phik.entry_points:phik_trial # [win]
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
-    - {{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
     - cmake >=3.16
-    - ninja  # [not win]
-    - make  # [linux]
+    - if: unix
+      then: ninja
+    - if: target_platform == 'linux-64'
+      then: make
   host:
     - python
     - scikit-build-core >=0.3.3
@@ -34,23 +37,21 @@ requirements:
     - pandas >=0.25.1
     - matplotlib-base >=2.2.3
     - joblib >=0.14.1
-
-
-test:
-  imports:
-    - phik
+tests:
+  - python:
+      imports:
+        - phik
 
 about:
-  home: https://github.com/KaveIO/PhiK
+  homepage: https://github.com/KaveIO/PhiK
   license: Apache-2.0
-  license_family: Apache
   license_file: LICENSE
   summary: Phi_K correlation analyzer library
   description: |
     Phi_K is a new and practical correlation coefficient based on several
     refinements to Pearson's hypothesis test of independence of two variables.
-  doc_url: http://phik.readthedocs.io/
-  dev_url: https://github.com/KaveIO/PhiK
+  documentation: http://phik.readthedocs.io/
+  repository: https://github.com/KaveIO/PhiK
 
 extra:
   recipe-maintainers:

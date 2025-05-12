@@ -16,7 +16,6 @@ Documentation: http://phik.readthedocs.io/
 Phi_K is a new and practical correlation coefficient based on several
 refinements to Pearson's hypothesis test of independence of two variables.
 
-
 Current build status
 ====================
 
