@@ -7,7 +7,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/phik-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/phik-${{ version }}.tar.gz
   sha256: d4d53274685e56fb08088505b4eec70be07f2f8044e7961ca02b399e42c37025
 
 build:
