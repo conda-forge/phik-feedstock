@@ -27,6 +27,8 @@ requirements:
       then: make
     - if: build_platform != target_platform
       then: python
+    - if: build_platform != target_platform
+      then: numpy
     - cross-python_${{ target_platform }}
   host:
     - python
