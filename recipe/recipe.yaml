@@ -29,7 +29,8 @@ requirements:
       then: python
     - if: build_platform != target_platform
       then: numpy
-    - cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
   host:
     - python
     - scikit-build-core >=0.3.3
