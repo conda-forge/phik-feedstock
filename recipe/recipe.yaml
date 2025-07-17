@@ -1,6 +1,6 @@
 context:
   name: "PhiK"
-  version: "0.12.4"
+  version: "0.12.5"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/phik-${{ version }}.tar.gz
-  sha256: d4d53274685e56fb08088505b4eec70be07f2f8044e7961ca02b399e42c37025
+  sha256: dfc15a9166ab0dcfe3f5f60de606fe9ce064a09af2dd212e726ed3625b795332
 
 build:
   number: 0
@@ -26,13 +26,11 @@ requirements:
     - if: target_platform == 'linux-64'
       then: make
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: numpy
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
-    - if: build_platform != target_platform
-      then: make
+      then:
+        - python
+        - numpy
+        - cross-python_${{ target_platform }}
+        - make
   host:
     - python
     - scikit-build-core >=0.3.3
